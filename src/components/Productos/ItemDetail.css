@@ -1,0 +1,18 @@
+.item__card{
+    display: flex;
+    
+}
+.item__card-header{
+    display: flex;
+}
+.item__card-media{
+    display: flex;
+}
+
+.item__card-content{
+    display: flex;
+}
+
+.item__card-actions{
+    display: flex;
+}

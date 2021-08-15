@@ -1,0 +1,83 @@
+ /*Navbar.jsx*/
+
+ .navbar__contenedor{
+     display: flex;
+     width: 100%;
+     background-color: #020024;
+ }
+ .nav{
+    display: flex;
+    color: white;
+    padding: 10px;
+    } 
+
+    .nav__derecha{
+    display: flex;
+    width: 30%;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center
+    }
+    .nav__izquierda{
+        display: flex;
+        width: 70%;
+        color: white;
+    }
+    .nav__derecha img{
+    width: auto;
+    
+    z-index: 10;
+    }
+
+
+
+.nav__titulo{
+    color: white;
+    text-decoration: none;
+}
+
+    .titulo__nav{
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+      align-items: center;
+      width: auto;
+    }
+    .titulo__lista{
+      display: flex;
+      flex-direction: row;
+      list-style:none;
+      justify-content: space-evenly;
+      width: 80%;
+      align-items: center;
+    }
+    
+    .titulo__lista li{
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    }
+    .titulo__lista li:hover{
+      color: rgb(145, 30, 199);
+      }
+    
+   
+     .navbar__button a {
+         color: white;
+     } 
+
+     .navbar__button button {
+        background-color: white;
+    } 
+
+    .navbar__button button:hover {
+        background-color: white;
+    } 
+
+    .navbar__cart button{
+        background-color: white;
+    }
+
+    .navbar__cart button:hover{
+        background-color: white;
+    }

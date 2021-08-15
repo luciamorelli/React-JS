@@ -1,38 +1,126 @@
 .App {
-  text-align: center;
-}
+    text-align: center;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
+  }
+  
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
   }
-}
+  
+  
+  .App-header {
+  
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
+  .App__centro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .App__centro h1{
+    font-size: small;
+  }
+  
+    .App__props{
+  color:white;
+    }
+  
+  /*ItemListContainer.jsx*/
+  
+  .productos__contenedor{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+  }
+  .productos__contenedoruno{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .productos__contenedordos{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .productos__contenedortres{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  /*ItemList*/
+  .item__contenedor{
+    display: flex;
+    flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  align-items: center;
+  
+    
   }
-  to {
-    transform: rotate(360deg);
+  
+  .items {
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    align-items: center;
+   
+    
   }
-}
+  .items__titulo{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    font-size: medium;
+  }
+  .items__img{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+  
+  }
+  .items__price{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+  }
+  .App__productos{
+    color: white;
+    background-image:linear-gradient(#020024, #380979, #100175);
+    
+  }
+  
+  .App__productos h1{
+    color: white;
+    
+  }
+  /*Footer*/
+  .App__footer{
+    color: white;
+    background-color: #100175;
+  }
+  
+  .App__footer button{
+    background-color: black;
+    color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: small;
+  }

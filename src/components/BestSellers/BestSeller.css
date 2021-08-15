@@ -1,0 +1,53 @@
+
+.App__bestseller{
+    background-image:linear-gradient(#020024, #380979, #100175);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.App__bestseller-vinilos{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.App__bestseller-vinilos-uno{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center
+
+}
+
+.App__bestseller-vinilos-uno img {
+ display: flex;
+width: 500px;
+justify-content: center;
+}
+
+.App__bestseller-vinilos-dos{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.App__bestseller-vinilos-dos img {
+    display: flex;
+   width: 500px;
+   justify-content: center;
+   }
+
+.App__bestseller-vinilos-tres{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.App__bestseller-vinilos-tres img {
+    display: flex;
+   width: 500px;
+   justify-content: center;
+   }
+   

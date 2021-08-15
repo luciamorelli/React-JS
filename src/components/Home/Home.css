@@ -1,0 +1,63 @@
+
+
+ .home{
+    background-image:linear-gradient(#020024, #380979, #100175);}
+.App__home{
+    display: flex;
+    flex-direction: column;
+}
+  .App__home-contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    align-items: center;
+  }
+  
+  .App__home-contenedor img{
+    width: 250px;
+    
+
+  }
+
+.App__home-galeria-contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .App__home-galeria-contenedor img{
+    width: 33.33%;
+
+  }
+
+  .App__home-textos{
+      color: white;
+      font-size: small;
+  }
+
+  .App__home-boton button{
+      background-color: black;
+      color: white;
+        border-radius: 50%;
+        width: 150px;
+        height: 50px;
+        font-size: small;
+    }
+
+    .App__home-galeria{
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+    .App__home-galeria-contenedor{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .App__home-galeria-contenedor img{
+    width: 26%;
+    padding: 20px;
+    
+    }
