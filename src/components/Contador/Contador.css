@@ -1,0 +1,71 @@
+  /*Contador.jsx*/
+
+  .button_contenedor{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+.button{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+
+    }
+.buttonmas{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 88%;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  background-color: rgb(98, 8, 182);
+  color: white;
+  font-size: large;
+
+}
+.buttonmas:hover{
+  background-color: black;  
+}
+
+
+.buttonmenos{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 88%;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  background-color: rgb(98, 8, 182);
+  color: white;
+  font-size: large;
+}
+
+.buttonmenos:hover{
+  background-color: black;  
+}
+
+.buttonborrar{
+    display: flex;
+    width: 200px;
+    height: 50px;
+    border-radius: 5%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(98, 8, 182);
+    color: white;
+    font-size: medium;
+}
+
+.buttonborrar:hover{
+  background-color: black;  
+}
+
+.buttontexto{
+    display: flex;
+}

@@ -2,6 +2,7 @@
 //Material UI
 //Imports
 import React, { useState } from 'react';
+import './ItemList.css';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -19,32 +20,12 @@ import accounting from 'accounting';
 import { actionTypes } from '../../reducer';
 import {useStateValue} from '../../StateProvider';
 import {Link} from 'react-router-dom';
-//Estilos
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-}));
 
-export default function ItemList ({itemArray : id, name, category, price, image, description, stock}) {
-  const classes = useStyles();
+
+//ItemList recive atributo de ItemListContainer
+//Para usar loselementos que vienen del array de item --> item.nombreDelElemento
+export default function ItemList ({item}) {
+  
   const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
   const [expanded, setExpanded] = React.useState(false);
 
@@ -56,13 +37,13 @@ export default function ItemList ({itemArray : id, name, category, price, image,
     dispatch({
       type: actionTypes.ADD_TO_BASKET,
       item:{
-      id: id,
-      name: name,
-      price: price,
-      image:image,
-      category: category,
-      description: description,
-      stock: stock,
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image:item.image,
+      category: item.category,
+      description: item.description,
+      stock: item.stock,
 
       }      
     })
@@ -72,63 +53,42 @@ export default function ItemList ({itemArray : id, name, category, price, image,
 //CardContent --> Breve descripcion del producto
 //CardAction --> Botones para agregar al carrito  
 return (
-    <Card className={classes.root}>
-      <CardHeader
-        action={
-          <Typography variant="h4" color="btextSecondary">
-              {accounting.formatMoney (price, "$")}
-          </Typography> 
-        }
-        
-        title={name}
-        />
+  <div className="itemlist">
+
+  <Link to={`/productos/${item.id}`} >
+    
+    <Card className="itemlist__1">
+
       
-      <CardContent>
-        <Typography variant="h3" color="textSecondary">
-      {name}                      
-      <Link to={`/productos/${id}`}>{name}</Link>
-        </Typography>
-      </CardContent>
-
-
-        
-      <CardMedia
-        image={image}
-        title={name}>
-
-      </CardMedia>
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {category}
-        </Typography>
-      </CardContent>
-
-
-      <CardActions disableSpacing>
-        <IconButton aria-label="Add to Cart" onClick={addToBasket} >
-          <AddShoppingCart fontSize="large"/>
-        </IconButton>
-        
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Detalle del producto:</Typography>
-          <Typography paragraph>
-            {description}
+        <CardContent >
+          <Typography variant="h6" color="textSecondary" className="itemlist__titulo">          
+        <Link to={`/productos/${item.id}`}>{item.name}</Link>
           </Typography>
-          
         </CardContent>
-      </Collapse>
+
+      
+        <CardHeader 
+          action={
+            <Typography variant="p" color="btextSecondary">
+                {accounting.formatMoney (item.price, "$")}
+            </Typography> 
+          }
+          
+          />
+
+        <CardMedia className="itemlist__imagen">
+          <img src={item.image}/>
+        </CardMedia>
+
+        <CardContent className="itemlist__categoria">
+          <Typography variant="body2" color="textSecondary" component="p">
+            {item.category}
+          </Typography>
+        </CardContent>
+
+
     </Card>
+    </Link>
+    </div>
   );
 }

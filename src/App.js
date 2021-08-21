@@ -15,6 +15,7 @@ import Bestseller from './components/BestSellers/BestSeller';
 import Home from './components/Home/Home';
 import ItemDetail from './components/Productos/ItemDetail';
 
+
 function App() {
 const [{user}, dispatch] = useStateValue();
 
@@ -49,14 +50,17 @@ if (authUser){
         <Bestseller/>
         </Route>
 
+        <Route path= "/productos/:id">
+        <ItemDetail/>
+        </Route>
+  
+
+
       <Route path= "/productos">
       <ItemListContainer/>
         </Route>
 
-        <Route path= "/productos/:id">
-      <ItemDetail/>
-        </Route>
-  
+        
         <Route path= "/signin">
         <SignIn/>
         </Route>
@@ -73,7 +77,7 @@ if (authUser){
         
 
         <Route path= "/">
-        <Home/>
+
         <Home/>
         </Route>
       </Switch>
