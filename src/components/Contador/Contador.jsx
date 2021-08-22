@@ -27,7 +27,7 @@ export function Contador (props) {
         <button className="buttonmas" onClick={addProduct}> + </button>
         
         </div>
-        <button className="buttonborrar"onClick= {reset}> BORRAR CARRITO</button>  
+        <button className="buttonborrar"onClick= {reset}> BORRAR CONTADOR</button>  
         
         </div>
     )

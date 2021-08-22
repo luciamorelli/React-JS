@@ -14,6 +14,8 @@ import accounting from 'accounting';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {useStateValue} from '../../StateProvider';
 import { actionTypes } from '../../reducer';
+import CardContent from '@material-ui/core/CardContent';
+
 
 //Estilos
 const useStyles = makeStyles((theme) => ({
@@ -39,8 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Parte1({
-    product : id, name, category, price, image, description, stock}) {
+export default function Parte1({item}) {
   const classes = useStyles();
   const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
  
@@ -52,7 +53,17 @@ export default function Parte1({
 
   const removeItem = () => dispatch({  // agarra el elemento por el id y lo elimina
     type: actionTypes.REMOVE_ITEM,
-    id: id,
+    item:{
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      image:item.image,
+      category: item.category,
+      description: item.description,
+      stock: item.stock,
+
+      }      
+
   })
  
 //CardMedia --> Imagen del vinilo
@@ -60,24 +71,24 @@ export default function Parte1({
 //CardAction --> Botones para agregar al carrito  
 return (
     <Card className={classes.root}>
-      <CardHeader
-        action={
-          <Typography //Agrego un elemento con esta etiqueta
-          className={classes.action}
-          variant="h3"
-          color="btextSecondary">
-              {accounting.formatMoney (price, "$")}
+       <CardHeader 
+          action={
+            <Typography variant="p" color="btextSecondary">
+                {accounting.formatMoney (item.price, "$")}
+            </Typography> 
+          }
+          
+          />
+
+        <CardMedia className="itemlist__imagen">
+          <img src={item.image}/>
+        </CardMedia>
+
+        <CardContent className="itemlist__categoria">
+          <Typography variant="body2" color="textSecondary" component="p">
+            {item.category}
           </Typography>
-        }
-        title= {name}
-        subheader="Happier than Ever"
-      />
-      <CardMedia
-        className={classes.media}
-        image={image}
-        title={name}
-      />
-     
+        </CardContent>
 
 
       <CardActions disableSpacing>  

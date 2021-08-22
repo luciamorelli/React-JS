@@ -13,7 +13,7 @@ const Parte2 = () => {
 <div>
 <h5> Total items:{basket?.lenght} </h5>
 <h5> {accounting.formatMoney(getBasketTotal(basket), "$")}</h5>
-<Button  variant="contained"> Check Out</Button>
+<Button  variant="contained"> COMPRAR </Button>
 </div>
     )
 }

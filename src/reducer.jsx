@@ -1,3 +1,5 @@
+import itemArray from "./vinilos";
+
 export const initialState = {
     basket: [], //array vacio
     user:null,
@@ -15,10 +17,10 @@ export const getBasketTotal = (basket) => {
 }
 
 const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la accion cuando ocurre el addtoBasket
-    console.log(action)
+    console.log(action);
     switch(action.type){
         case "ADD_TO_BASKET": //ejecute esta accion
-        return{
+        return{ 
         ...state, //retonar lo que esta dentro del basket mas lo agregado en la ccion
         basket:[...state.basket, action.item],
     };
@@ -29,12 +31,14 @@ const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la 
         let newBasket = [...state.basket];
         if(index>=0){
             newBasket.splice(index, 1)
-        }else {console.log("No se puede remover el producto")}
+        }else {alert("No se puede remover el producto")}
         //sacamos una copia del nuevo basket y si encuentra el indice elimina 1 elemento a partir de ese indice (splice)
         return{
            ...state, //todo el estado + lo nuevo
             basket:newBasket,
+           
         };
+        
         case "SET_USER":
             return {
                 ...state, 
