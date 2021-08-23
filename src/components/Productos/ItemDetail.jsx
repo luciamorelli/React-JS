@@ -43,24 +43,31 @@ export default function ItemDetail ({item}) {
   //CardAction --> Botones para agregar al carrito  
   return (
     <div className="itemDetail">
+
+      <div className="itemDetail__contenedor">
+      
       <div className="itemDetail__parte1">
+        <img src= {itemArray[id].image} />
+       </div>
 
-    <img src= {itemArray[id].image} />
-  
     
-    </div>
-
-    <div className="itemDetail__parte2">
-    <h1> {itemArray[id].name} </h1>
-    <h3> $ {itemArray[id].price} </h3>
-    <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+      <div className="itemDetail__parte2">
+        <h1> {itemArray[id].name} </h1>
+        
+        <CardContent>
+          <Typography variant="body2" color="white" component="p">
             {itemArray[id].category}
-            
           </Typography>
         </CardContent>
 
-          <CardContent>
+              
+        <h3> $ {itemArray[id].price}  </h3>
+
+        <Typography variant="p" color="btextSecondary" className="itemlist__stock">
+            Stock disponible: {itemArray[id].stock} 
+         </Typography>
+        
+          <CardContent className="itemDetail__descripcion">
             <Typography paragraph>Detalle del producto:</Typography>
             <Typography paragraph>
               {itemArray[id].description}
@@ -77,15 +84,9 @@ export default function ItemDetail ({item}) {
               AGRAGAR AL CARRITO
           </button>
           </div>
-      
-       
-
 
     </div>
-         
-
-        
-          
+    </div>
       </div>
     );
   }

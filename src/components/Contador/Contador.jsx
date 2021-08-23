@@ -15,7 +15,7 @@ export function Contador (props) {
         }
     };
     const reset = ()=> {
-        setCount(0); //resetea todo a 1
+        setCount(1); //resetea todo a 1
     }
 
     return(
@@ -23,7 +23,7 @@ export function Contador (props) {
         <div className="button">
       
         <button className="buttonmenos" onClick={restProduct}> - </button> 
-        <h2 className="buttontexto"> Vinilos :{count} </h2>
+        <h2 className="buttontexto"> Cantidad : {count} </h2>
         <button className="buttonmas" onClick={addProduct}> + </button>
         
         </div>

@@ -3,7 +3,21 @@
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
-    padding: 40px;
+    width: 100%;
+    justify-content: center;
+    padding-top: 60px;
+
+}
+
+.itemDetail__contenedor{
+    display: flex;
+    flex-direction: row;
+    background-image:linear-gradient(#020024, #380979, #100175);
+    color: white;
+    width: 70%;
+
+
+
 }
 
 .itemDetail__parte1{
@@ -12,14 +26,15 @@
     width: 50%;
     justify-content: center;
     align-items: center;
+    padding: 5px ;
 
 
 }
 
 .itemDetail__parte1 img{
     display: flex;
- width: 400px;
- height: 400px;
+     width: 400px;
+    height: 400px;
 
 }
 
@@ -29,7 +44,24 @@
     width: 50%;
     justify-content: center;
     align-items: center;
+    padding: 5px;
+}
 
+.itemDetail__parte2 h1{
+    display: flex;
+    padding-top: 10px;
+}
+.itemDetail__parte2 p{
+    display: flex;
+    justify-content: center
+}
+
+.itemDetail__descripcion{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
 }
 
 .buttonagregar button{
@@ -46,4 +78,9 @@
 
 .buttonagregar button:hover{
   background-color: black;  
+}
+
+.buttonagregar{
+    display: flex;
+    padding: 10px;
 }
