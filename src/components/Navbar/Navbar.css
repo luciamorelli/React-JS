@@ -1,9 +1,19 @@
  /*Navbar.jsx*/
+.navbar{
+    display: flex;
+    width: 100%;
+}
+
+.navbar__appbar{
+    display: flex;
+    width: 100%;
+}
 
  .navbar__contenedor{
      display: flex;
      width: 100%;
      background-color: #020024;
+     padding: 5px;
  }
  .nav{
     display: flex;
@@ -13,14 +23,14 @@
 
     .nav__derecha{
     display: flex;
-    width: 30%;
+    width: 50%;
     height: 100px;
-    justify-content: space-between;
+    justify-content:flex-start;
     align-items: center
     }
     .nav__izquierda{
         display: flex;
-        width: 70%;
+        width: 50%;
         color: white;
     }
     .nav__derecha img{
@@ -34,6 +44,7 @@
 .nav__titulo{
     color: white;
     text-decoration: none;
+    font-size: xx-large;
 }
 
     .titulo__nav{
@@ -61,7 +72,13 @@
       color: rgb(145, 30, 199);
       }
     
-   
+      .navbar__button{
+          padding: 10px;
+      }
+
+      .navbar__cart{
+        padding: 100px;
+      }
      .navbar__button a {
          color: white;
      } 

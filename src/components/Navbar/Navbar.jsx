@@ -1,6 +1,5 @@
 import React from 'react';
 import './Navbar.css';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -16,21 +15,7 @@ import {useHistory} from "react-router-dom";
 
 
 
-//ESTILOS PARA EL NAVBAR
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
-
 export default function Navbar() {
-  const classes = useStyles();
   const [{basket, user}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
   const history = useHistory();
 
@@ -52,10 +37,9 @@ export default function Navbar() {
     }
   }
   
-  
   return (
-    <div >
-      <AppBar position="static">
+    <div className="navbar">
+      <AppBar position="static" className="navbar__appbar">
         <Toolbar className="navbar__contenedor">
 
             <div className="nav__izquierda">
@@ -81,7 +65,7 @@ export default function Navbar() {
             </ul>
             </div>
           <div className= "nav__derecha">
-                <Typography variant="h6" color="white" component="p">
+                <Typography variant="h7" color="white" component="p">
                 Hola {user? user.email:"Guest"} 
                 </Typography>
 

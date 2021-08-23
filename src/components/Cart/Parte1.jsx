@@ -71,6 +71,7 @@ export default function Parte1({item}) {
 //CardAction --> Botones para agregar al carrito  
 return (
     <Card className={classes.root}>
+       
        <CardHeader 
           action={
             <Typography variant="p" color="btextSecondary">
