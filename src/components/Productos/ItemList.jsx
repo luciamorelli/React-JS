@@ -70,15 +70,19 @@ return (
         <CardHeader 
           action={
             <Typography variant="p" color="btextSecondary">
-                {accounting.formatMoney (item.price, "$")}
-            </Typography> 
-          }
-          
-          />
+                ${item.price}
+            </Typography>  
 
-        <CardMedia className="itemlist__imagen">
-          <img src={item.image}/>
-        </CardMedia>
+          }       
+          />
+          <Typography variant="p" color="btextSecondary" className="itemlist__stock">
+            Stock disponible: {item.stock}
+            
+          </Typography>
+
+          <CardMedia className="itemlist__imagen">
+            <img src={item.image}/>
+          </CardMedia>
 
         <CardContent className="itemlist__categoria">
           <Typography variant="body2" color="textSecondary" component="p">
