@@ -1,6 +1,8 @@
 
 import React, {Component} from "react";
+import { Link } from 'react-router-dom';
 import './Home.css';
+
 
 class Home extends Component{
     render(){
@@ -14,12 +16,16 @@ class Home extends Component{
         <img src="./img-home/VINILO2.png"  />
         </div>
 
+
 <div className="App__home-textos">
 <h1> ENCONTRÁ LOS MEJORES VINILOS </h1>
 </div>
 
+
 <div className="App__home-boton">
+<Link to="/"> 
 <button> VER PRODUCTOS </button>
+</Link>
 </div>
 
 <div className="App__home-galeria">

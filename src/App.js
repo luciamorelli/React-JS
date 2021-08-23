@@ -56,8 +56,8 @@ if (authUser){
   
 
 
-      <Route path= "/productos">
-      <ItemListContainer/>
+      <Route path= "/home">
+        <Home/>
         </Route>
 
         
@@ -77,8 +77,7 @@ if (authUser){
         
 
         <Route path= "/">
-
-        <Home/>
+        <ItemListContainer/>
         </Route>
       </Switch>
 

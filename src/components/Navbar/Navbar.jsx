@@ -67,11 +67,11 @@ export default function Navbar() {
                 </IconButton>
                 </Link>
         
-              <Link to="/">  
+              <Link to="/home">  
               <li className="titulo__lista--uno"> Home </li> 
               </Link>
 
-              <Link to="/productos">
+              <Link to="/">
               <li className="titulo__lista--dos"> Productos </li> 
               </Link>
 

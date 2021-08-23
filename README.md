@@ -1,3 +1,24 @@
+# VINILOS.COM
+Vinilos.com es una pagina para comprar los mejores vinilos de la Argentina!
+Con una interfaz muy intuitiva y facil de utilizar en segundos podes adquirir el vinilo de tu banda preferida.
+
+Descripción
+Vinilos.com tiene 5 secciones principales:
+
+-La primera sección el el ItemListContainer.jsx el cual contiene todos los productos disponibles para la venta. Al clickear cualquiera de estos te llevará al ItemDetail del producto donde encontrarás más informacion del mismo y podrás agregarlo al carrito.
+
+-La segunda sección es Home.jsx la cual permite dar la bienvenida a todos aquellos usuarios nuevos. 
+
+-La tercera sección es Best Sellers.jsx donde mostramos los discos más solicitados por el público.
+
+-La cuarta seccion es el SingnIn/Out en el cual los usuario nuevos deben crearse una cuenta y luego podrán Iniciar Sesión. Todos los datos plasmados en los formularios se guardan en Firebase en la sección Authentication, donde nos encontraremos con los siguientes datos del usuario: Identificador - Proveedores -Fecha de creación de cuenta- Fecha de  acceso a cuenta - UID de usuario.
+
+-La quinta sección pero no la menos importante es el Cart.jsx en el cual a medida que agregamos productos al carrito se pueden ver rápidamente la cantidad total de vinilos adquiridos y al entrar en esta sección nos aparecerán todos los productos agregados, con su descripcion y la opción de eliminar alguno, si el usuario desea. 
+Luego el usuario podrá visualizar el total a pagar y previa confirmación de compra debe completar un formulario, el cual los datos del mismo y los datos de la compra se almacenaran en FireBase.
+
+Ya realizada la compra con éxito el usuario puede seguir comprando y navegando por vinilos.com.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -39,31 +60,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Librerias usadas:
+React js
+Firebase
+Material UI
 
 ### `npm run build` fails to minify
 
