@@ -8,7 +8,7 @@ import {Switch, BrowserRouter as Router, Route} from 'react-router-dom'
 import SignIn from './components/SingIn/SignIn';
 import SignUp from './components/SingIn/SignUp';
 import {useEffect} from 'react';
-import { auth } from './firebase';
+import { auth } from './firebase/firebase';
 import { actionTypes } from './reducer';
 import { useStateValue } from './StateProvider';
 import Bestseller from './components/BestSellers/BestSeller';
@@ -17,6 +17,8 @@ import ItemDetail from './components/Productos/ItemDetail';
 
 
 function App() {
+ 
+  
 const [{user}, dispatch] = useStateValue();
 
 useEffect(()=> {

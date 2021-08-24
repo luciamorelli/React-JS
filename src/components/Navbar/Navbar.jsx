@@ -9,7 +9,7 @@ import { ShoppingCart } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import {useStateValue} from '../../StateProvider';
-import { auth } from '../../firebase';
+import { auth } from '../../firebase/firebase';
 import { actionTypes } from '../../reducer';
 import {useHistory} from "react-router-dom";
 

@@ -5,17 +5,17 @@ export function Contador (props) {
     const [count, setCount] = useState(1);
 
     const  addProduct = () =>{
-        if (count < props.stock){
-        setCount(count + 1); //se suma 1 al estado 
+        if (props.count < props.stock){
+        props.setCount(props.count + 1); //se suma 1 al estado 
         }
     };
     const  restProduct = () =>{
-        if (count > props.initial){
-        setCount(count - 1); //se resta 1 al estado 
+        if (props.count > props.initial){
+            props.setCount(props.count - 1); //se resta 1 al estado 
         }
     };
     const reset = ()=> {
-        setCount(1); //resetea todo a 1
+        props.setCount(1); //resetea todo a 1
     }
 
     return(
@@ -23,7 +23,7 @@ export function Contador (props) {
         <div className="button">
       
         <button className="buttonmenos" onClick={restProduct}> - </button> 
-        <h2 className="buttontexto"> Cantidad : {count} </h2>
+        <h2 className="buttontexto"> Cantidad : {props.count} </h2>
         <button className="buttonmas" onClick={addProduct}> + </button>
         
         </div>
