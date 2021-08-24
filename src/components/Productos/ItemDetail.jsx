@@ -5,14 +5,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { actionTypes } from '../../reducer';
 import {useStateValue} from '../../StateProvider';
-import { red } from '@material-ui/core/colors';
-import { makeStyles } from '@material-ui/core/styles';
 import Contador from '../Contador/Contador';
 import itemArray from '../../vinilos';
 
 
 export default function ItemDetail ({item}) {
-
     const {id} = useParams();
     const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
     const [expanded, setExpanded] = React.useState(false);
@@ -21,26 +18,29 @@ export default function ItemDetail ({item}) {
       setExpanded(!expanded);
     };
   
+    const selectedItem = itemArray.filter((element)=> element.id == id);
+      console.log(selectedItem);
+
     const addToBasket = () =>{
-     
+      
       dispatch({
         type: actionTypes.ADD_TO_BASKET,
-        item:{
-        id: itemArray.id,
-        name: itemArray.name,
-        price: itemArray.price,
-        image: itemArray.image,
-        category: itemArray.category,
-        description: itemArray.description,
-        stock: itemArray.stock,
+        selectedItem:{
+        id: selectedItem.id,
+        name: selectedItem.name,
+        price: selectedItem.price,
+        image: selectedItem.image,
+        category: selectedItem.category,
+        description: selectedItem.description,
+        stock: selectedItem.stock,
   
         }      
       })
-      alert("Se agrego tu producto al carrito");
+     // alert("Se agrego tu producto al carrito");
     }
-  //CardMedia --> Imagen del vinilo
-  //CardContent --> Breve descripcion del producto
-  //CardAction --> Botones para agregar al carrito  
+
+    
+    
   return (
     <div className="itemDetail">
 

@@ -13,16 +13,17 @@ export const actionTypes = {
 };
 
 export const getBasketTotal = (basket) => {
-    basket?.reduce((amount,item) => item.price + amount, 0)
+    basket?.reduce((amount,selectedItem) => selectedItem.price + amount, 0)
 }
 
 const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la accion cuando ocurre el addtoBasket
     console.log(action);
     switch(action.type){
+        
         case "ADD_TO_BASKET": //ejecute esta accion
         return{ 
         ...state, //retonar lo que esta dentro del basket mas lo agregado en la ccion
-        basket:[...state.basket, action.item],
+        basket:[...state.basket, action.selectedItem],
     };
     case "REMOVE_ITEM":
         //desaparece solo el producto clickeado no importa si es el mismo id
