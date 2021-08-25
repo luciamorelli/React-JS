@@ -1,0 +1,35 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  
+  .container__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(203, 160, 243);
+  }
+  
+  .container__comentarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(112, 38, 182);
+    
+  }
+  
+  .resultado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: black;
+  }

@@ -15,7 +15,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import {useStateValue} from '../../StateProvider';
 import { actionTypes } from '../../reducer';
 import CardContent from '@material-ui/core/CardContent';
-
+import './CheckOut.css';
 
 //Estilos
 const useStyles = makeStyles((theme) => ({
@@ -68,31 +68,35 @@ export default function Parte1({item}) {
  
 
 return (
-    <Card className={classes.root}>
+    <Card className="itembasket">
        
+       <Typography color="white" component="h1" className="itembasket--name">
+            {item.name}
+        </Typography>
+
        <CardHeader 
           action={
-            <Typography variant="p" color="btextSecondary">
+            <Typography variant="p" color="btextSecondary" className="itembasket--precio">
                 ${item.price}
             </Typography> 
           }
           
           />
 
-        <CardMedia className="itemlist__imagen">
+        <CardMedia className="itembasket--imagen">
           <img src={item.image}/>
         </CardMedia>
 
-        <CardContent className="itemlist__categoria">
-          <Typography variant="body2" color="textSecondary" component="p">
+        <CardContent className="itembasket--categoria">
+          <Typography variant="body2" color="white" component="p">
             {item.category}
           </Typography>
         </CardContent>
 
 
       <CardActions disableSpacing>  
-      <IconButton>
-      <DeleteIcon fontSize="large" onClick={removeItem}/>
+      <IconButton >
+      <DeleteIcon  className="buttonborrar" fontSize="large" onClick={removeItem}/>
       </IconButton>
       </CardActions>
     

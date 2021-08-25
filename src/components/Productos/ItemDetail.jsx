@@ -26,11 +26,7 @@ export default function ItemDetail () {
       setItem({...product.docs.find((item)=> item.id === id).data()}))
       ;
     });
-    //const itemArray = database.collection("vinilos");
-
-  //  const selectedItem = itemArray.filter((element)=> element.id == id);
-   // console.log(selectedItem);
-
+   
     const handleExpandClick = () => {
       setExpanded(!expanded);
     };

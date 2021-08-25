@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { database } from "../../firebase/firebase";
 import Form from "./Form";
 import Comentario from "./Comentario";
+import './Form.css';
 
 
 const Container = () => {

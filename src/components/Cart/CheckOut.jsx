@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core';
 import Parte1 from './Parte1';
 import Parte2 from './Parte2';
 import {useStateValue} from '../../StateProvider';
-
+import './CheckOut.css';
 
 const useStyles = makeStyles ((theme) => ({
     root: {
@@ -22,7 +22,7 @@ const CheckOut = () => {
         return(
             <React.Fragment>
                 {basket?.map((item) =>(
-                    <Grid item xs={12} sm={8} md={6} lg={4}>
+                    <Grid className="itembasket" item xs={12} sm={8} md={6} lg={4}>
                         <Parte1 key={item} item={item} />
                     </Grid>
                 ))}
@@ -31,24 +31,32 @@ const CheckOut = () => {
     }
 
     return(
-        <div>
-            <Grid container spacing ={3}>
-                <Grid item  xs={12}>
+        <div className="checkout">
+            <Grid className="checkout__contenedor" container spacing ={3}>
+               
+               
+                <Grid className="checkout__contenedor--titulo" item  xs={12}>
                     <Typography align="center" gutterBottom varian= 'h1'>
                         Shopping Cart
                     </Typography>
                 </Grid>
-            
-                <Grid item  xs={12} sm={8} md={9} container spacing={2}>
+            <div className="checkout__contenedor--columnas">
+                <Grid  className="checkout__contenedor--derecha"item  xs={12} sm={8} md={9} container spacing={2}>
                     <FormRow/>
                 </Grid>
                 
-                <Grid item  xs={12} sm={4} md={3}>
+                <Grid  className="checkout__contenedor--izquierda"item  xs={12} sm={4} md={3}>
+                    
+                    <div className="checkout__contenedor--total">
                     <Typography align="center" gutterBottom variant="h4">
                        <Parte2/>
                     </Typography>
+                    </div>
+                    <div className="checkout__contenedor--espacio">
+
+                    </div>
                 </Grid>
-            
+            </div>
             </Grid>
         </div>
     )

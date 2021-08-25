@@ -1,4 +1,5 @@
 import React from "react";
+import './Form.css';
 ///Importamos tanto firebase como la base de datos
 
 
