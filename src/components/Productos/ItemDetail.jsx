@@ -10,12 +10,22 @@ import ItemList from './ItemList';
 import { database} from '../../firebase/firebase';
 
 
-export default function ItemDetail ({item}) {
+export default function ItemDetail () {
     const {id} = useParams();
     const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
    
     const [expanded, setExpanded] = React.useState(false);
+    const [item, setItem] = useState([]);
 
+    const getItem= () => {
+      return database.collection("vinilos");
+    }
+    useEffect(()=>{
+      getItem().get()
+      .then((product)=>
+      setItem({...product.docs.find((item)=> item.id === id).data()}))
+      ;
+    });
     //const itemArray = database.collection("vinilos");
 
   //  const selectedItem = itemArray.filter((element)=> element.id == id);
@@ -46,7 +56,7 @@ export default function ItemDetail ({item}) {
      // alert("Se agrego tu producto al carrito");
     }
 
-    const result= count * item[id].price ;
+    const result= count * item.price ;
  
   return (
     <div className="itemDetail">
@@ -54,36 +64,36 @@ export default function ItemDetail ({item}) {
       <div className="itemDetail__contenedor">
       
       <div className="itemDetail__parte1">
-        <img src= {item[id].image} />
+        <img src= {item.image} />
        </div>
 
     
       <div className="itemDetail__parte2">
-        <h1> {item[id].name} </h1>
+        <h1> {item.name} </h1>
         
         <CardContent>
           <Typography variant="body2" color="white" component="p">
-            {item[id].category}
+            {item.category}
           </Typography>
         </CardContent>
 
               
-        <h3> $ {item[id].price} cada uno </h3>
+        <h3> $ {item.price} cada uno </h3>
 
         <Typography variant="p" color="btextSecondary" className="itemlist__stock">
-            Stock disponible: {item[id].stock} 
+            Stock disponible: {item.stock} 
          </Typography>
         
           <CardContent className="itemDetail__descripcion">
             <Typography paragraph>Detalle del producto:</Typography>
             <Typography paragraph>
-              {item[id].description}
+              {item.description}
             </Typography>
             
           </CardContent>
           <h3> Total $ {result} </h3>
         <div>
-            <Contador stock={item[id].stock} initial={1} count={count} setCount={setCount} />
+            <Contador stock={item.stock} initial={1} count={count} setCount={setCount} />
         </div>
 
         <div className="buttonagregar">

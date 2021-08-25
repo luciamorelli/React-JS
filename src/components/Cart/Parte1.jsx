@@ -1,7 +1,7 @@
 //Pagina donde se disponen todos los vinilos disponibles
 //Material UI
 //Imports
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -61,21 +61,19 @@ export default function Parte1({item}) {
       category: item.category,
       description: item.description,
       stock: item.stock,
-
+      count: item.count,
       }      
 
   })
  
-//CardMedia --> Imagen del vinilo
-//CardContent --> Breve descripcion del producto
-//CardAction --> Botones para agregar al carrito  
+
 return (
     <Card className={classes.root}>
        
        <CardHeader 
           action={
             <Typography variant="p" color="btextSecondary">
-                {accounting.formatMoney (item.price, "$")}
+                ${item.price}
             </Typography> 
           }
           

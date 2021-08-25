@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core';
 import Parte1 from './Parte1';
 import Parte2 from './Parte2';
 import {useStateValue} from '../../StateProvider';
-import itemArray from '../../vinilos';
+
 
 const useStyles = makeStyles ((theme) => ({
     root: {
@@ -23,7 +23,7 @@ const CheckOut = () => {
             <React.Fragment>
                 {basket?.map((item) =>(
                     <Grid item xs={12} sm={8} md={6} lg={4}>
-                        <Parte1 key={item.id} item={item} />
+                        <Parte1 key={item} item={item} />
                     </Grid>
                 ))}
             </React.Fragment>

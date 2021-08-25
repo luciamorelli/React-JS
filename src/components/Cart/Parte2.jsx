@@ -5,7 +5,7 @@ import { getBasketTotal } from '../../reducer';
 import {useStateValue} from '../../StateProvider';
 
 
-const Parte2 = () => {
+const Parte2 = ({item}) => {
 
     const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
   

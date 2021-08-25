@@ -34,6 +34,6 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 # Librerias usadas:
-. React
-. Material UI
-. Firebase
+. React-router-dom
+. @material-ui/core
+. @material-ui/icons
