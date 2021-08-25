@@ -3,7 +3,7 @@ import accounting from 'accounting';
 import { Button } from '@material-ui/core';
 import { getBasketTotal } from '../../reducer';
 import {useStateValue} from '../../StateProvider';
-
+import { Link } from 'react-router-dom';
 
 const Parte2 = ({item}) => {
 
@@ -13,7 +13,10 @@ const Parte2 = ({item}) => {
 <div>
 <h5> Total items:{basket?.lenght} </h5>
 <h5> {accounting.formatMoney(getBasketTotal(basket), "$")}</h5>
+
+<Link to= "/Form">x
 <Button  variant="contained"> COMPRAR </Button>
+</Link>
 </div>
     )
 }

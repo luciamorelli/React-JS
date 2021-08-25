@@ -14,7 +14,7 @@ import { useStateValue } from './StateProvider';
 import Bestseller from './components/BestSellers/BestSeller';
 import Home from './components/Home/Home';
 import ItemDetail from './components/Productos/ItemDetail';
-
+import Container from './components/Form/Container';
 
 function App() {
  
@@ -56,7 +56,10 @@ if (authUser){
         <ItemDetail/>
         </Route>
   
-
+        <Route path= "/Form">
+        <Container/>
+        </Route>
+  
 
       <Route path= "/home">
         <Home/>
