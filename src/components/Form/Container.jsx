@@ -55,12 +55,12 @@ const Container = () => {
     return (
     
     <div className="container"> 
-        
+        <div className="container__form"> 
         <div className="container__titulo">
         <p> Completa los siguientes datos para complatar la compra: </p>
         </div>
         
-        <div className="container__form">
+        <div className="container__form1">
         <Form agregarComentario= {agregarComentario}/>
         </div>
 
@@ -68,6 +68,7 @@ const Container = () => {
             {comentarios.map((item) => <Comentario data={item} key={item.id}/>)}
         </section>
         <button onClick={borrarTdodos}> BORRAR TODOS</button>
+    </div>
     </div>
 
     );
