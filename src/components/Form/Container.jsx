@@ -3,6 +3,7 @@ import { database } from "../../firebase/firebase";
 import Form from "./Form";
 import Comentario from "./Comentario";
 import './Form.css';
+import { Link } from 'react-router-dom';
 
 
 const Container = () => {
@@ -39,19 +40,20 @@ const Container = () => {
         .catch((err)=>alert("Error: ", err)) //si hay un error
         .finally(()=>obtenerComentarios()); //luego obtiene los comentarios
     };
-
+   
     
-
     const borrarTdodos = async () => {
         let comentariosRemotos = database.collection("formulario")
         const query =  await comentariosRemotos.get();
-        const batch = database.batch() //libreta
+       const batch = database.batch() //libreta
         query.docs.forEach((comentario)=> batch.delete(comentario.ref))
         batch.commit(); //ejecute lo planteado
-        alert ("borrados con exito");
         obtenerComentarios();
+       
 
     }
+  
+  
     return (
     
     <div className="container"> 
@@ -63,11 +65,16 @@ const Container = () => {
         <div className="container__form1">
         <Form agregarComentario= {agregarComentario}/>
         </div>
+        <div className="espacio" >
+
+        </div>
 
         <section className="container__comentarios">
             {comentarios.map((item) => <Comentario data={item} key={item.id}/>)}
         </section>
-        <button onClick={borrarTdodos}> BORRAR TODOS</button>
+        <Link to="/">
+        <button onClick={ borrarTdodos}> SEGUIR COMPRANDO</button>
+        </Link>
     </div>
     </div>
 

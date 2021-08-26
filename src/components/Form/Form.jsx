@@ -17,6 +17,10 @@ const Form = ({ agregarComentario}) => {
 
     ev.target.reset(); //vacia todos los campos
     };
+    const resetCarro = ()=>{
+      window.location.reload();
+     }
+  
 
   return (
 
@@ -32,7 +36,7 @@ const Form = ({ agregarComentario}) => {
       <lebel className="form__comentario">Aclaraciones:</lebel>
       <textarea className="form__comentario--input" placeholder="Aclaraciones..." id="comentario"/>
       
-      <button className="form__button"type="submit">COMPRAR</button>
+      <button className="form__button"type="submit" onClick={resetCarro}>COMPRAR</button>
     
     </form>
   );

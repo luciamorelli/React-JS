@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/Productos/ItemListContainer';
@@ -18,7 +18,7 @@ import Container from './components/Form/Container';
 
 function App() {
  
-  
+
 const [{user}, dispatch] = useStateValue();
 
 useEffect(()=> {
@@ -35,7 +35,7 @@ if (authUser){
 
   }, [])
 
-
+  
 
   return (
     <Router>
@@ -47,7 +47,6 @@ if (authUser){
 
     
       <Switch>
-
       <Route path= "/bestseller">
         <Bestseller/>
         </Route>

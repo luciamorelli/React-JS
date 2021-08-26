@@ -44,7 +44,9 @@
         height: 50px;
         font-size: small;
     }
-
+.App__home-boton{
+  padding: 20px;
+}
     .App__home-galeria{
         display: flex;
         flex-direction: column;

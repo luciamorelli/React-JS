@@ -12,13 +12,24 @@ import { actionTypes } from '../../reducer';
 import {useStateValue} from '../../StateProvider';
 import {Link} from 'react-router-dom';
 import { database} from '../../firebase/firebase';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Loading from  '../Loading/Loading';
 
 
 //ItemList recive atributo de ItemListContainer
 //Para usar loselementos que vienen del array de item --> item.nombreDelElemento
 export default function ItemList ({item}) {
   
+  //Loader
+ const [loading,setLoading] = useState(false);
+ const cambiarEstado = () => {
+   setLoading(true);
+   setTimeout(()=>{
+    setLoading(false);
+   },1000);
+ }
+ 
+
   const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
   const [expanded, setExpanded] = React.useState(false);
 
@@ -42,20 +53,25 @@ export default function ItemList ({item}) {
     })
 
   }
-//CardMedia --> Imagen del vinilo
-//CardContent --> Breve descripcion del producto
-//CardAction --> Botones para agregar al carrito  
+
+
+  if(loading){
+    return(
+      <Loading/>
+    )
+  }
+  else {
 return (
   <div className="itemlist">
 
-  <Link to={`/productos/${item.id}`} >
+  <Link to={`/productos/${item.id}`} onClick={()=>cambiarEstado()} >
     
     <Card className="itemlist__1">
 
       
         <CardContent >
           <Typography variant="h6" color="textSecondary" className="itemlist__titulo">          
-        <Link to={`/productos/${item.id}`}>{item.name}</Link>
+        <Link to={`/productos/${item.id}`} onClick={()=>cambiarEstado()}>{item.name}</Link>
           </Typography>
         </CardContent>
 
@@ -88,4 +104,4 @@ return (
     </Link>
     </div>
   );
-}
+}}

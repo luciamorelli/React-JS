@@ -16,6 +16,7 @@
     width: 100%;
     justify-content: center;
     overflow-x: hidden;
+    
 
 }
 .itemlistcontainer{
@@ -29,7 +30,7 @@
     align-items: center;
     padding: 10px;
     text-align: center;
-    
+    overflow-y: hidden;
 }
 
 .itemlistcontainer__item{

@@ -8,6 +8,7 @@ import {useStateValue} from '../../StateProvider';
 import Contador from '../Contador/Contador';
 import ItemList from './ItemList';
 import { database} from '../../firebase/firebase';
+import { Link } from 'react-router-dom';
 
 
 export default function ItemDetail () {
@@ -97,7 +98,13 @@ export default function ItemDetail () {
               AGRAGAR AL CARRITO
           </button>
           </div>
-
+          <Link to="/productos">
+          <div className="buttonagregarmas">
+          <button >
+              AGREGAR MÁS PRODUCTOS
+          </button>
+          </div>
+          </Link>
     </div>
     </div>
       </div>

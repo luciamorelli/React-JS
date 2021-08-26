@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import './Form.css';
 
 const Comentario =({data:{nombre, comentario,apellido,fecha, id}
@@ -15,9 +15,6 @@ const Comentario =({data:{nombre, comentario,apellido,fecha, id}
         <p className="resultado__comentario"> Aclaraciones: {comentario} </p>
         <p>Transaccion realizada el dia: {fecha} </p>
 
-        <Link to="/">
-        <button> SEGUIR COMPRANDO </button>
-        </Link>
         
     </article>
     

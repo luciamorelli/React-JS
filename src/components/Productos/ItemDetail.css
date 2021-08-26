@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    padding-top: 60px;
+    padding-top: 0px;
 
 }
 
@@ -45,15 +45,22 @@
     justify-content: center;
     align-items: center;
     padding: 5px;
+    
 }
 
 .itemDetail__parte2 h1{
     display: flex;
     padding-top: 10px;
+    overflow-y: hidden;
 }
 .itemDetail__parte2 p{
     display: flex;
-    justify-content: center
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+.itemDetail__parte2 h3{
+    overflow-y: hidden;
 }
 
 .itemDetail__descripcion{
@@ -62,6 +69,7 @@
     flex-direction: column;
     align-content: center;
     text-align: center;
+    overflow-y: hidden;
 }
 
 .buttonagregar button{
@@ -81,6 +89,27 @@
 }
 
 .buttonagregar{
+    display: flex;
+    padding: 10px;
+}
+
+.buttonagregarmas button{
+    display: flex;
+    width: 200px;
+    height: 50px;
+    border-radius: 5%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(8, 182, 139);
+    color: white;
+    font-size: small;
+}
+
+.buttonagregarmas button:hover{
+  background-color: black;  
+}
+
+.buttonagregarmas {
     display: flex;
     padding: 10px;
 }

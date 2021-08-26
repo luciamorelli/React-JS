@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Navbar.css';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,10 +12,23 @@ import {useStateValue} from '../../StateProvider';
 import { auth } from '../../firebase/firebase';
 import { actionTypes } from '../../reducer';
 import {useHistory} from "react-router-dom";
+import Loading from '../Loading/Loading';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 export default function Navbar() {
+
+  
+  //Loader
+ const [loading,setLoading] = useState(false);
+ const cambiarEstado = () => {
+   setLoading(true);
+   setTimeout(()=>{
+    setLoading(false);
+   },1000);
+ }
+ // onClick={()=>cambiarEstado()}
   const [{basket, user}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
   const history = useHistory();
 
@@ -36,7 +49,12 @@ export default function Navbar() {
 
     }
   }
-  
+  if(loading){
+    return(
+      <Loading/>
+    )
+  }
+  else {
   return (
     <div className="navbar">
       <AppBar position="static" className="navbar__appbar">
@@ -45,21 +63,21 @@ export default function Navbar() {
             <div className="nav__izquierda">
             <ul className="titulo__lista">
            
-            <Link to='/'>
-                <IconButton edge="start" className="nav__titulo-button">
+            <Link to='/' onClick={()=>cambiarEstado()}>
+                <IconButton edge="start" className="nav__titulo-button" > 
                   <h1 className="nav__titulo">Vinilos.com</h1>
                 </IconButton>
                 </Link>
         
-              <Link to="/home">  
+              <Link to="/home" onClick={()=>cambiarEstado()}>  
               <li className="titulo__lista--uno"> Home </li> 
               </Link>
 
-              <Link to="/">
+              <Link to="/"onClick={()=>cambiarEstado()}>
               <li className="titulo__lista--dos"> Productos </li> 
               </Link>
 
-              <Link to="/bestseller">
+              <Link to="/bestseller" onClick={()=>cambiarEstado()}>
                 <li className="titulo__lista--tres"> Best Sellers </li> 
               </Link>
             </ul>
@@ -70,13 +88,13 @@ export default function Navbar() {
                 </Typography>
 
                 <div className="navbar__button">
-                  <Link to="/signin" >
+                  <Link to="/signin" onClick={()=>cambiarEstado()} >
                    <Button onClick={handleAuth}> 
                    {user?"Sign Out":"Sign In"} </Button>
                   </Link>
                 </div>
           
-                <Link to='/checkout'>
+                <Link to='/checkout'onClick={()=>cambiarEstado()}>
                 <div className="navbar__cart">
                     <IconButton aria-lebel="show cart items" color="inherit">
                         <Badge badgeContent={basket?.length} color= "secondary"> 
@@ -95,4 +113,4 @@ export default function Navbar() {
       </AppBar>
     </div>
   );
-}
+}}

@@ -2,11 +2,13 @@
 .navbar{
     display: flex;
     width: 100%;
+   
 }
 
 .navbar__appbar{
     display: flex;
     width: 100%;
+    
 }
 
  .navbar__contenedor{
@@ -14,11 +16,13 @@
      width: 100%;
      background-color: #020024;
      padding: 5px;
+     
  }
  .nav{
     display: flex;
     color: white;
     padding: 10px;
+    
     } 
 
     .nav__derecha{
@@ -26,7 +30,8 @@
     width: 50%;
     height: 100px;
     justify-content:flex-start;
-    align-items: center
+    align-items: center;
+    overflow-y: hidden;
     }
     .nav__izquierda{
         display: flex;
@@ -45,6 +50,7 @@
     color: white;
     text-decoration: none;
     font-size: xx-large;
+    overflow-y: hidden;
 }
 
     .titulo__nav{
@@ -79,12 +85,17 @@
       .navbar__cart{
         padding: 100px;
       }
+
+      .navbar__cart button span{
+        overflow:visible; 
+        }
      .navbar__button a {
          color: white;
      } 
 
      .navbar__button button {
         background-color: white;
+        overflow:visible;
     } 
 
     .navbar__button button:hover {
