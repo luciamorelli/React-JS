@@ -14,12 +14,14 @@ align-items: center;
     width: 80%;
     background-color: black;
     align-items: center;
-
+    flex-wrap: wrap;
+    justify-content: center;
     
 }
 .itembasket--name{
 display: flex;
 color: white;
+padding-top: 10px;
 }
 .itembasket--precio{
     display: flex;
@@ -53,6 +55,8 @@ color: white;
     display: flex;
     background-image:linear-gradient(#020024, #380979, #100175);
     color: white;
+    height: 100vw;
+    overflow-y:hidden ;
 }
 
 .checkout__contenedor{
@@ -60,6 +64,7 @@ color: white;
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
+    height: 100vw;
 }
 
 .checkout__contenedor--titulo{
@@ -67,13 +72,16 @@ color: white;
     text-align: center;
     width: 100%;
    justify-content: center;
+   height: 5%;
 }
 
 .checkout__contenedor--columnas{
     display: flex;
     width: 100%;
    margin: 10px;
+   height: 95%;
    justify-content: center;
+   overflow-y: hidden;
 }
 .checkout__contenedor--izquierda{
     display: flex;
@@ -94,7 +102,15 @@ color: white;
 .checkout__contenedor--derecha{
     display: flex;
     width: 80%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    align-content: flex-start;
+}
+/*Parte 2*/
+
+.parte2__contenedor button{
+    background-color:greenyellow ;
+    
 }

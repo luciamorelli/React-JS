@@ -88,6 +88,7 @@ const singup = (e) => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+              className="label"
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -100,6 +101,7 @@ const singup = (e) => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+              className="label"
                 variant="outlined"
                 required
                 fullWidth
@@ -114,7 +116,7 @@ const singup = (e) => {
 //Captutar lo que se ingresa en los inputs
           value={email}
           onChange={e=> setEmail(e.target.value)}    
-
+          className="label"
                 variant="outlined"
                 required
                 fullWidth
@@ -130,7 +132,7 @@ const singup = (e) => {
 value={password}
 onChange={e=> setPassword(e.target.value)}    
 
-                
+              className="label"
                 variant="outlined"
                 required
                 fullWidth

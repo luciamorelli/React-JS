@@ -54,13 +54,34 @@
     color: white;
     
   }
-  
+  .resultado__titulo{
+    overflow-y: hidden;
+  }
+  .resultado__t{
+    overflow-y: hidden;
+  }
   .resultado{
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: black;
-  }
-  .form{
     
+  }
+  .buttonseguir{
+    background-color:greenyellow;
+    border-radius: 50%;
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+
+  }
+  .form__button{
+      background-color:greenyellow;
+      width: 150px;
+      height: 30px;
+      text-align: center;
+      align-self: center;
+      margin: 20px;
+
+  
   }

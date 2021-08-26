@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Link as RouteLink, useHistory} from "react-router-dom";
 import { useState } from 'react';
 import { auth } from '../../firebase/firebase';
-
+import '../Productos/ItemList.css';
 
 function Copyright() {
   return (
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage: 'url(https://i.blogs.es/2201b1/record/1366_2000.jpg)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -53,9 +53,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '80%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
+ 
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
@@ -90,7 +91,8 @@ export default function SignIn() {
             Sign in
           </Typography>
           <form className={classes.form} noValidate>
-            <TextField
+            <TextField 
+            className="label"
             value={email}
             onChange={e=>setEmail(e.target.value)}
               variant="outlined"
@@ -104,7 +106,7 @@ export default function SignIn() {
               autoFocus
             />
             <TextField
-            
+            className="label"
             value={password}
             onChange={e=>setPassword(e.target.value)}
               variant="outlined"

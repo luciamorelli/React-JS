@@ -87,3 +87,11 @@ align-items: center;
     display: flex;
     padding: 5px;
 }
+
+/*Sing Up*/
+.label label{
+    overflow-y: hidden ;
+}
+.label input{
+    overflow-y: hidden ;
+}

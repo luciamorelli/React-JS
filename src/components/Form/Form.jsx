@@ -4,6 +4,8 @@ import './Form.css';
 
 
 const Form = ({ agregarComentario}) => {
+ 
+
   const handleSubmit = (ev) => {
     ///Evitamos el comportamiento default de los forms
     ev.preventDefault();
@@ -15,12 +17,11 @@ const Form = ({ agregarComentario}) => {
 
     agregarComentario(nombre,apellido, comentario);
 
-    ev.target.reset(); //vacia todos los campos
-    };
-    const resetCarro = ()=>{
-      window.location.reload();
-     }
+    ev.target.reset();//vacia todos los campos
+     
+  }
   
+    
 
   return (
 
@@ -36,7 +37,7 @@ const Form = ({ agregarComentario}) => {
       <lebel className="form__comentario">Aclaraciones:</lebel>
       <textarea className="form__comentario--input" placeholder="Aclaraciones..." id="comentario"/>
       
-      <button className="form__button"type="submit" onClick={resetCarro}>COMPRAR</button>
+      <button className="form__button"type="submit" >COMPRAR</button>
     
     </form>
   );

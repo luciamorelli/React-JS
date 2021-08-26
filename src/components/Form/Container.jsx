@@ -73,7 +73,7 @@ const Container = () => {
             {comentarios.map((item) => <Comentario data={item} key={item.id}/>)}
         </section>
         <Link to="/">
-        <button onClick={ borrarTdodos}> SEGUIR COMPRANDO</button>
+        <button className="buttonseguir" onClick={ borrarTdodos}> SEGUIR COMPRANDO</button>
         </Link>
     </div>
     </div>
