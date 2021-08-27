@@ -9,6 +9,7 @@ import Contador from '../Contador/Contador';
 import ItemList from './ItemList';
 import { database} from '../../firebase/firebase';
 import { Link } from 'react-router-dom';
+import Resultado from '../Contador/Resultado';
 
 
 export default function ItemDetail () {
@@ -33,7 +34,7 @@ export default function ItemDetail () {
     };
   
     const [count, setCount] = useState(1);
-
+    const [result, setResult] = useState(1);
     const addToBasket = () =>{
       
       dispatch({
@@ -46,14 +47,15 @@ export default function ItemDetail () {
         category: item.category,
         description: item.description,
         stock: item.stock,
-        count: item.count,
+        count: count,
+        result: count * item.price,
   
         }      
       })
      // alert("Se agrego tu producto al carrito");
     }
 
-    const result= count * item.price ;
+   // const result= count * item.price ;
  
   return (
     <div className="itemDetail">
@@ -88,6 +90,7 @@ export default function ItemDetail () {
             </Typography>
             
           </CardContent>
+          <Resultado  result={result} setResult={setResult} /> 
           <h3> Total $ {result} </h3>
         <div>
             <Contador stock={item.stock} initial={1} count={count} setCount={setCount} />

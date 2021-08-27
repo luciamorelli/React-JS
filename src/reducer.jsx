@@ -12,8 +12,9 @@ export const actionTypes = {
 };
 
 export const getBasketTotal = (basket) => {
-    basket?.reduce((amount,item) => item.price + amount, 0)
+    basket?.reduce((amount, item) => item.price + amount, 0)
 }
+console.log(getBasketTotal);
 
 const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la accion cuando ocurre el addtoBasket
     console.log(action);
@@ -34,7 +35,7 @@ const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la 
         }else{
 
         return{ 
-        ...state, //retonar lo que esta dentro del basket mas lo agregado en la ccion
+        ...state, //retonar lo que esta dentro del basket mas lo agregado en la accion
         basket:[...state.basket, action.item],
         }
     };

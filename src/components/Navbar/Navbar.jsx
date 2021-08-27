@@ -18,7 +18,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function Navbar() {
-
   
   //Loader
  const [loading,setLoading] = useState(false);
