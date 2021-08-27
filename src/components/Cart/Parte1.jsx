@@ -41,7 +41,7 @@ export default function Parte1({item}) {
 
   })
  
-  const result= count * item.price ;
+  const result= item.count * item.price ;
   
 return (
     <Card className="itembasket">
@@ -51,13 +51,13 @@ return (
         </Typography>
         
         <Typography color="white" component="h1" className="itembasket--name">
-            {result}
+        Subtotal: $ {result}
         </Typography>
        
        <CardHeader 
           action={
             <Typography variant="p" color="btextSecondary" className="itembasket--precio">
-                Cantidad seleccionada: {count}
+                Cantidad vinilos: {item.count}
             </Typography> 
           }
           
