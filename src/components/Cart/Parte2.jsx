@@ -19,7 +19,7 @@ const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, s
 
 return (
 <div className="parte2__contenedor">
-<h5> Total items: {total} </h5>
+<h5> Total compra:$ {total} </h5>
 
 <Link to= "/Form">
 <Button className="buttoncomprar" variant="contained"  > COMPRAR </Button>

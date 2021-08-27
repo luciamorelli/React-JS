@@ -36,7 +36,7 @@ const Container = () => {
         let comentariosRemotos= database.collection("formulario") //devuelve promesa
         comentariosRemotos
         .add(comentarioNuevo) //pasamos objeto
-        .then(()=> alert("COMENTARIO AGREGADO")) //promesa
+        .then(()=> alert("COMPRA REALIZADA")) //promesa
         .catch((err)=>alert("Error: ", err)) //si hay un error
         .finally(()=>obtenerComentarios()); //luego obtiene los comentarios
     };
