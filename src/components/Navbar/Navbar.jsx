@@ -19,6 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Navbar() {
   
+  const categories= ["Pop", 'Rock']
   //Loader
  const [loading,setLoading] = useState(false);
  const cambiarEstado = () => {
@@ -75,6 +76,14 @@ export default function Navbar() {
               <Link to="/"onClick={()=>cambiarEstado()}>
               <li className="titulo__lista--dos"> Productos </li> 
               </Link>
+
+              {categories.map(cat =>{
+                return(
+                  <Link to = {`/catalogo/${cat}`}>
+                    <li className="titulo__lista--dos"> {cat} </li>
+                  </Link>
+                )
+              })}
 
               <Link to="/bestseller" onClick={()=>cambiarEstado()}>
                 <li className="titulo__lista--tres"> Best Sellers </li> 

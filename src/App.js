@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/Productos/ItemListContainer';
@@ -53,6 +53,10 @@ if (authUser){
 
         <Route path= "/productos/:id">
         <ItemDetail/>
+        </Route>
+
+        <Route path= "/catalogo/:categoryId">
+        <ItemListContainer/>
         </Route>
   
         <Route path= "/Form">

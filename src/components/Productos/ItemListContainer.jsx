@@ -4,14 +4,26 @@ import { useState } from 'react';
 import './ItemList.css';
 import { database} from '../../firebase/firebase';
 import { useEffect } from 'react';
+import { useParams} from 'react-router';
 
 
 // Definimos un  estado donde  guardamos todos los items que vamos a mostrar
 const ItemListContainer = (props)=> {
+
+  //Categorias
+let {categoryId} = useParams();
+
+
   const [vinilosAMostrar,setDisplayItems] = useState([]);
 
   const obtenerVinilos = ()=> {
-  const itemArray = database.collection("vinilos");
+ 
+  let itemArray = database.collection("vinilos");
+
+  if(categoryId){
+    itemArray = database.collection("vinilos").where("category", "==", categoryId)
+}
+
   itemArray.get()
   .then((query)=> 
   setDisplayItems(
@@ -20,11 +32,17 @@ const ItemListContainer = (props)=> {
     };
   } ))
   );
+
  };
  
-useEffect(()=> {
+ useEffect(()=> {
   obtenerVinilos()
-});
+},[categoryId]);
+
+
+
+
+
 return (
   <div className="itemlistcontainer__contenedor">
     <div className="itemlistcontainer__contenedor1">
