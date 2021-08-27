@@ -20,13 +20,27 @@ const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la 
     switch(action.type){
         
         case "ADD_TO_BASKET": //ejecute esta accion
+//IsInCart agarra del estado al item seleccionado, si se encuentra ahi, sino queda en undefined
+        const isInCart = state && state.basket.filter((i)=> i.id === action.item.id)
+
+        //Elimino el item actual en el carrito filtrandolo y agragarlo el nuevo item 
+        const nuevoBasket = state.basket.filter((el)=>{return el.id !== action.item.id})
+        console.log('nuevo item',nuevoBasket)
+        if (isInCart) {
+            return{
+                ...state,
+                basket:[...nuevoBasket, action.item]
+            }
+        }else{
+
         return{ 
         ...state, //retonar lo que esta dentro del basket mas lo agregado en la ccion
         basket:[...state.basket, action.item],
+        }
     };
     case "REMOVE_ITEM":
         //desaparece solo el producto clickeado no importa si es el mismo id
-     const index = state.basket.findIndex((basketItem => basketItem.id === action.id)) //definimos un indice que es el que va a estar dentro del array
+     const index = state.basket.findIndex((basketItem => basketItem.id === action.item.id)) //definimos un indice que es el que va a estar dentro del array
         //un basketItem tal que el id del item sea igual al pasado
         let newBasket = [...state.basket];
         if(index>=0){
