@@ -1,11 +1,11 @@
 import firebase from 'firebase';
 const firebaseConfig = {
-  apiKey: "AIzaSyCEogIEGK-4CCODUqLGo4QIbadov7KNqko",
-  authDomain: "vinilos-b131a.firebaseapp.com",
-  projectId: "vinilos-b131a",
-  storageBucket: "vinilos-b131a.appspot.com",
-  messagingSenderId: "1063878215161",
-  appId: "1:1063878215161:web:ad42e27e0a5d45f4032928"
+  apiKey: "AIzaSyDugUXCB97vi0w8hCSuGJ5o5Xc1kOlCAs0",
+  authDomain: "vinilos--com.firebaseapp.com",
+  projectId: "vinilos--com",
+  storageBucket: "vinilos--com.appspot.com",
+  messagingSenderId: "410617585872",
+  appId: "1:410617585872:web:464733ce24baa03e9b7ed5"
 };
 
 

@@ -59,7 +59,7 @@ const Container = () => {
     <div className="container"> 
         <div className="container__form"> 
         <div className="container__titulo">
-        <p> Completa los siguientes datos para complatar la compra: </p>
+        <p> Completa los siguientes datos para finalizar la compra: </p>
         </div>
         
         <div className="container__form1">

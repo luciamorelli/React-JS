@@ -1,10 +1,20 @@
 import React from "react";
 import './Form.css';
+import {useStateValue} from '../../StateProvider';
+import { actionTypes } from '../../reducer';
 ///Importamos tanto firebase como la base de datos
 
 
 const Form = ({ agregarComentario}) => {
  
+  const [{basket, user}, dispatch]= useStateValue();  
+  const goInicio = () =>{
+      dispatch({
+        type: actionTypes.EMPTY_BASKET,
+        basket: [], //vaciamos el basket
+      });
+    }
+
 
   const handleSubmit = (ev) => {
     ///Evitamos el comportamiento default de los forms
@@ -18,8 +28,10 @@ const Form = ({ agregarComentario}) => {
     agregarComentario(nombre,apellido, comentario);
 
     ev.target.reset();//vacia todos los campos
+    goInicio();
      
   }
+  
   
     
 
@@ -37,7 +49,7 @@ const Form = ({ agregarComentario}) => {
       <lebel className="form__comentario">Aclaraciones:</lebel>
       <textarea className="form__comentario--input" placeholder="Aclaraciones..." id="comentario"/>
       
-      <button className="form__button"type="submit" >COMPRAR</button>
+      <button className="form__button"type="submit">COMPRAR</button>
     
     </form>
   );

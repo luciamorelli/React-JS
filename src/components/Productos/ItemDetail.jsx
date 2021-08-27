@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import { actionTypes } from '../../reducer';
 import {useStateValue} from '../../StateProvider';
 import Contador from '../Contador/Contador';
-import ItemList from './ItemList';
 import { database} from '../../firebase/firebase';
 import { Link } from 'react-router-dom';
 

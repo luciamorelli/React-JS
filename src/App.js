@@ -30,9 +30,7 @@ if (authUser){
     user: authUser,
   })
 }
-
   })
-
   }, [])
 
   

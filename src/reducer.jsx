@@ -13,7 +13,7 @@ export const actionTypes = {
 
 
 const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la accion cuando ocurre el addtoBasket
-    console.log(action);
+  
     switch(action.type){
         
         case "ADD_TO_BASKET": //ejecute esta accion
@@ -22,7 +22,7 @@ const reducer = (state, action) => { //cuando hagamos el dispatch de ejecuta la 
 
         //Elimino el item actual en el carrito filtrandolo y agragarlo el nuevo item 
         const nuevoBasket = state.basket.filter((el)=>{return el.id !== action.item.id})
-        console.log('nuevo item',nuevoBasket)
+       
         if (isInCart) {
             return{
                 ...state,

@@ -11,7 +11,6 @@ import Typography from '@material-ui/core/Typography';
 import { actionTypes } from '../../reducer';
 import {useStateValue} from '../../StateProvider';
 import {Link} from 'react-router-dom';
-import { database} from '../../firebase/firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Loading from  '../Loading/Loading';
 
@@ -33,26 +32,6 @@ export default function ItemList ({item}) {
   const [{basket}, dispatch]= useStateValue();  //click en el boton del carrito, se ejecuta AddToBasket, y este hace un dispatch del item y lo mete en los datos/ reducer escucha el AddToBasket y cambia el estado anadiendo el item al array  
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  const addToBasket = () =>{
-    dispatch({
-      type: actionTypes.ADD_TO_BASKET,
-      item:{
-      id: item.id,
-      name: item.name,
-      price: item.price,
-      image:item.image,
-      category: item.category,
-      description: item.description,
-      stock: item.stock,
-
-      }      
-    })
-
-  }
 
 
   if(loading){

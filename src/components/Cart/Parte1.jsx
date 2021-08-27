@@ -1,5 +1,3 @@
-//Pagina donde se disponen todos los vinilos disponibles
-//Material UI
 //Imports
 import React, {useState, useEffect} from 'react';
 import Card from '@material-ui/core/Card';

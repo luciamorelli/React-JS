@@ -73,13 +73,13 @@ export default function Navbar() {
               <li className="titulo__lista--uno"> Home </li> 
               </Link>
 
-              <Link to="/"onClick={()=>cambiarEstado()}>
+              <Link to="/" onClick={()=>cambiarEstado()}>
               <li className="titulo__lista--dos"> Productos </li> 
               </Link>
 
               {categories.map(cat =>{
                 return(
-                  <Link to = {`/catalogo/${cat}`}>
+                  <Link to = {`/catalogo/${cat}`} onClick={()=>cambiarEstado()}>
                     <li className="titulo__lista--dos"> {cat} </li>
                   </Link>
                 )
